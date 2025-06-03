@@ -1,0 +1,4 @@
+langchain>=0.0.267
+langchain-openai>=0.0.1
+openai>=0.27.8
+wikipedia>=1.4.0
