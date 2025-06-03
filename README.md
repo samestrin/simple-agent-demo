@@ -5,7 +5,7 @@
 ![Version 1.0.0](https://img.shields.io/badge/Version-1.0.0-blue) [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg) ](https://opensource.org/licenses/MIT)[![Built with Python](https://img.shields.io/badge/Built%20with-Python-green)](https://www.python.org/)
 
 
-A demonstration of building a simple AI agent with LangChain and OpenAI. This project defines and integrates multiple tools—such as a Wikipedia search tool and a safe calculator—and shows how the agent reasons about each incoming question to choose the correct tool before returning an answer.
+A simple AI agent demo built with LangChain and OpenAI. This project defines and integrates multiple tools, Wikipedia search tool and a safe calculator tool, and shows how the agent reasons about each incoming question to choose the correct tool before returning an answer.
 
 ## Project Structure
 
