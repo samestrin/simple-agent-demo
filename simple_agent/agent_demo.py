@@ -11,6 +11,11 @@ import time
 from typing import List, Optional, Any, Dict
 from uuid import UUID
 
+
+import warnings
+warnings.filterwarnings("ignore") # Filter out the specific LangChain deprecation warning
+
+
 def main() -> None:
     """
     Main function that sets up and runs a LangChain agent with Wikipedia and Calculator tools.
@@ -31,8 +36,8 @@ def main() -> None:
     """
     # Print header
     print("\n")
-    print("🤖 Simple Agent Demo (LangChain with OpenAI Compatible LLM)")
-    print("-" * 50)
+    print("Simple Agent Demo (LangChain with OpenAI Compatible LLM)")
+    print("\n" + "-" * 100 + "\n")
     
     # Initialize statistics tracking
     stats: Dict[str, int] = {
@@ -125,9 +130,15 @@ def main() -> None:
             "Calculate the square root of 144",  
             "Tell me something about Art Deco jewelry.",
         ]
+  
+        counter = 0
 
         for q in questions:
-            print("\n" + "-" * 40)
+            counter += 1
+            
+            if counter > 1:
+                print("\n" + "-" * 90 + "\n")
+            
             print(f"Question: {q}")
             try:
                 # Use invoke instead of run to address deprecation warning
@@ -152,10 +163,9 @@ def main() -> None:
         
         # Print statistics
         elapsed_time = time.time() - start_time
-        
-        print("\n")
-        print("-" * 50)
-        print("\n📊 Statistics:")
+                
+        print("-" * 100)
+        print("\nStatistics:")
         
         print(f"- Runtime..............: {elapsed_time:.2f} seconds")
         print(f"- OpenAI API calls.....: {stats['openai_queries']}")
